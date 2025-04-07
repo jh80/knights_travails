@@ -4,8 +4,8 @@
 class Vertex
   attr_reader :place, :size, :edges
   @@moves = [[-1, -2], [-2, -1], [1, -2], [-2, 1], [-1, 2], [2, -1], [1, 2], [2, 1]]
-  def initialize(x, y, size = 8)
-    @place = [x,y]
+  def initialize(place, size = 8)
+    @place = place
     @size = size
     @edges = find_edges
   end
