@@ -19,4 +19,10 @@ class Vertex
     end
     edges
   end
+
+  private
+  
+  def invalid?(place = @place)
+    place.any? { |n| n < 0 || n > (size - 1)}
+  end
 end
