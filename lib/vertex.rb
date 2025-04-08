@@ -14,14 +14,14 @@ class Vertex
     edges = []
     @@moves.each do |move|
       edge = [@place[0] + move[0], @place[1] + move[1]]
-      next if edge.any? { |n| n < 0 || n > (size - 1)}
+      next if invalid?(edge)
       edges << edge
     end
     edges
   end
 
   private
-  
+
   def invalid?(place = @place)
     place.any? { |n| n < 0 || n > (size - 1)}
   end
