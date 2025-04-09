@@ -20,6 +20,21 @@ class Vertex
     edges
   end
 
+  def knight_moves(stop, path = @place)
+    shortest_path = nil
+    edges.each do |edge|
+      Vertex.new(edge)
+      if edge == stop
+        path << edge
+        shortest_path ||= path
+        shortest_path = shortest_path.length <= path.length ? shortest_path : path
+      else
+        path += knight_moves(edge, stop)
+      end
+    end
+    shortest_path
+  end
+
   private
 
   def invalid?(place = @place)
