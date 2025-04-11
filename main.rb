@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require './lib/vertex'
-
 def knight_moves(start, stop)
 
   paths_q = [[start]]
